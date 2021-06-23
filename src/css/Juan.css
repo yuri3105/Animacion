@@ -127,8 +127,72 @@ animation-duration: 3s;
     border-radius: 20px;
     border: 1px solid black;
 }
+
+#giros{
+    display: flex;
+    width: 100%;
+    height: min-content;
+    justify-content: space-around;
+}
+
+.card{
+    display: flex;
+    width: 160px;
+    height: 160px;
+    align-items: center;
+    justify-content: center;
+    background-color: #A9ECFF;
+    text-align: center;
+    margin: 20px;
+}
+
+.card2{
+    display: flex;
+    width: 160px;
+    height: 160px;
+    align-items: center;
+    justify-self: center;
+    justify-content: center;
+    background-color: #A9ECFF;
+    text-align: center;
+    margin: 20px;
+}
+
+
+#transiciones{
+    display: grid;
+    width: 99%;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-self: center;
+    align-items: center;
+    grid-template-rows: auto;
+    column-gap: 10px;
+    row-gap: 15px;
+    border: 2px solid red;
+
+}
+
+@media screen and (min-width:400px) and (max-width:750px){
+    #transiciones{
+       grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (min-width:751px) and (max-width:800px){
+    #transiciones{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+
+
+
+
+
+
 /* animacion */
-@keyframes slidein {
+/*@keyframes slidein {
     from {
     margin-left: 100%;
     }
@@ -168,4 +232,4 @@ animation-duration: 3s;
     100% {
         transform: rotate(0deg);
     }
-}
+}*/
