@@ -66,7 +66,7 @@ html, body {
 }
 
 .cubo2{
-    animation-name:;
+    animation-name:"";
     background-color: chartreuse;
 }
 
@@ -99,40 +99,64 @@ animation-name: temblar;
 animation-duration: 3s;
 }
 
-.Menu{
+.Menu {
+    align-items: center;
     display: flex;
     width: 90%;
     justify-content: center;
+   
+
 }
+
 .Menu ul{
-    display: flex;
     width: min-content;
     height: min-content;
     justify-content: space-between;
     align-items: center;
     padding-inline-start: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: center;
+    grid-template-rows: auto;
+    column-gap: 15px;
+    row-gap: 15px; 
+    
 }
 
-.Menu ul li{
-    background-color: #A9ECFF;
+.Menu ul li {
     display: flex;
+    background-color: #A9ECFF;
     align-items: center;
     list-style: none;
     font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    justify-content: center;
     font-size: 25px;
+    font-style: italic;
     width: auto;
+    height: 50%;
     padding: 10px 15px;
     margin: 10px;
-    height: 90%;
     border-radius: 20px;
     border: 1px solid black;
+    transition: border 2s, background-color 2s, box shadow 3s;
+} 
+
+.Menu ul li:hover{
+    background-color: rgb 194, 194, 245;
+    border: 1px solid blue;
+    box-shadow: 4px 4px 14px 0px rgba(224, 19, 19, 0.41);
+
 }
 
-#giros{
+/* SECCION DE GIROS */
+
+#Giros{
     display: flex;
-    width: 100%;
-    height: min-content;
+    width: 99%;
+    height: auto;
     justify-content: space-around;
+
 }
 
 .card{
@@ -140,9 +164,9 @@ animation-duration: 3s;
     width: 160px;
     height: 160px;
     align-items: center;
+    text-align: center;
     justify-content: center;
     background-color: #A9ECFF;
-    text-align: center;
     margin: 20px;
 }
 
@@ -150,49 +174,54 @@ animation-duration: 3s;
     display: flex;
     width: 160px;
     height: 160px;
-    align-items: center;
+    align-self: center;
     justify-self: center;
+    align-items: center;
+    text-align: center;
     justify-content: center;
     background-color: #A9ECFF;
-    text-align: center;
     margin: 20px;
+    transition: transform 3s;
 }
 
-
-#transiciones{
+.transiciones, .giros{
     display: grid;
     width: 99%;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    justify-self: center;
+    justify-content: center;
     align-items: center;
     grid-template-rows: auto;
-    column-gap: 10px;
-    row-gap: 15px;
-    border: 2px solid red;
-
+    column-gap: 15px;
+    row-gap: 15px; 
 }
 
-@media screen and (min-width:400px) and (max-width:750px){
-    #transiciones{
-       grid-template-columns: 1fr;
-    }
-}
-
-@media screen and (min-width:751px) and (max-width:800px){
-    #transiciones{
+@media screen and (min-width: 421px) and (max-width: 800px) {
+    .transiciones, .giros{
         grid-template-columns: 1fr 1fr;
     }
 }
 
+@media screen and (min-width: 375px) and (max-width: 420px) {
+    .transiciones, .giros{
+        grid-template-columns: 1fr;
+    }
+}
 
+@media screen and (min-width: 421px) and (max-width: 661px) {
+    .Menu ul{
+        grid-template-columns: 1fr 1fr;
+    }
+}
 
-
-
-
+@media screen and (min-width: 375px) and (max-width: 420px) {
+    .Menu ul{
+        grid-template-columns: 1fr;
+    }
+}
 
 
 /* animacion */
-/*@keyframes slidein {
+@keyframes slidein {
     from {
     margin-left: 100%;
     }
@@ -232,4 +261,141 @@ animation-duration: 3s;
     100% {
         transform: rotate(0deg);
     }
-}*/
+}
+
+@keyframes llegadaDerecha {
+    0%{
+        opacity: 0;
+        transform: translateX(1000px);
+    }
+    60%{
+        opacity: 0.8;
+        transform: translateX(-80px)
+    }
+    80%{
+        opacity: 0.9;
+        transform: translateX(15px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes llegadaIzquierda {
+    0%{
+        opacity: 0;
+        transform: translateX(-1000px);
+    }
+    60%{
+        opacity: 0.8;
+        transform: translateX(80px)
+    }
+    80%{
+        opacity: 0.9;
+        transform: translateX(15px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes llegadaArriba {
+    0%{
+        opacity: 0;
+        transform: translateY(-1000px);
+    }
+    60%{
+        opacity: 0.8;
+        transform: translateY(80px)
+    }
+    80%{
+        opacity: 0.9;
+        transform: translateY(15px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes llegadaAbajo {
+    0%{
+        opacity: 0;
+        transform: translateY(1000px);
+    }
+    60%{
+        opacity: 0.8;
+        transform: translateY(-80px)
+    }
+    80%{
+        opacity: 0.9;
+        transform: translateY(15px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* GIROS */
+
+.Giro_Completo:hover{
+    transform: rotate(360deg);
+}
+
+.Giro_Completo_left:hover{
+    transform: rotate(-360deg);
+}
+
+.Medio_Giro:hover{
+    transform: rotate(180deg);
+}
+
+.Medio_Giro_left:hover{
+    transform: rotate(-180deg);
+}
+
+/* Giro infinito */
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+  .infinito{
+    -webkit-animation: 3s rotate linear infinite;
+    animation: 3s rotate linear infinite;
+  }
+
+
+
+  /* TRANSICIONES */
+
+  .slideRigth{
+      animation-name: llegadaDerecha;
+      animation-duration: 3s ;
+      
+  }
+
+  .slideLeft{
+    animation-name: llegadaIzquierda;
+    animation-duration: 3s ;
+    
+}
+.slideTop{
+    animation-name: llegadaArriba;
+    animation-duration: 3s ;
+}
+
+.slideBottom{
+    animation-name: llegadaAbajo;
+    animation-duration: 3s ;
+}
