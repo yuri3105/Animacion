@@ -399,3 +399,55 @@ animation-duration: 3s;
     animation-name: llegadaAbajo;
     animation-duration: 3s ;
 }
+/* ---- ZOOOOOOM ---*/
+.zoom{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 50%;
+    padding: 20px 0;
+    column-gap: 18px;
+    row-gap: 15px;
+}
+.zoom_in:hover{
+    transform: scale(1.5);
+
+}
+.zoom_on:hover{
+    transform: scale(0.3);
+}
+/*----------- ANIMACIOooooN --*/
+@import url('https://fonts.googleapis.com/css?family=Arima+Madurai:300');
+
+
+.container {
+    min-height: 25rem;
+    padding: 0rem;
+}
+
+.bird {
+    background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/174479/bird-cells-new.svg);
+    background-size: auto 100%;
+    width: 352px;
+    height: 500px;
+    will-change: background-position;
+    animation-name: fly-cycle;
+    animation-duration: 1s;
+    animation-delay: -0.5s;
+    animation-timing-function: steps(10);
+    animation-iteration-count: infinite;
+}
+
+.bird-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    will-change: transform;
+}
+
+@keyframes fly-cycle {
+    
+    100% {
+        background-position: -3600px 0;
+    }
+}
